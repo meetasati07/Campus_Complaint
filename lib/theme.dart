@@ -19,7 +19,7 @@ class AppTheme {
     ),
     scaffoldBackgroundColor: Color.fromARGB(255, 255, 119, 119),
     fontFamily: 'Roboto',
-    primaryColor: Color(0xfffff2eb),
+    primaryColor: Color.fromARGB(255, 255, 251, 219),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         backgroundColor: Colors.black,
