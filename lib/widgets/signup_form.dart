@@ -1,5 +1,6 @@
 import 'package:campus_complaint/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SignupForm extends StatefulWidget {
   const SignupForm({super.key});
@@ -66,11 +67,15 @@ class _SignupFormState extends State<SignupForm> {
               if (value == null || value.isEmpty) {
                 return 'Email Required';
               }
+              if (!value.contains('@')) {
+                return 'Enter a valid Email';
+              }
               return null;
             },
           ),
           SizedBox(height: 10),
           TextFormField(
+            keyboardType: TextInputType.phone,
             decoration: InputDecoration(
               hintText: 'Phone Number',
               hintStyle: hintStyle,
@@ -88,6 +93,7 @@ class _SignupFormState extends State<SignupForm> {
           ),
           SizedBox(height: 10),
           TextFormField(
+            obscureText: true,
             decoration: InputDecoration(
               hintText: 'Password',
               hintStyle: hintStyle,

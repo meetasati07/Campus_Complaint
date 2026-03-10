@@ -42,11 +42,15 @@ class _LoginFormState extends State<LoginForm> {
               if (value == null || value.isEmpty) {
                 return 'Email Required';
               }
+              if (!value.contains('@')) {
+                return 'Enter a valid Email';
+              }
               return null;
             },
           ),
           SizedBox(height: 20),
           TextFormField(
+            obscureText: true,
             decoration: InputDecoration(
               hintText: 'Password',
               hintStyle: TextStyle(
