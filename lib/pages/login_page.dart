@@ -73,7 +73,7 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
-            TextButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
                   context,
@@ -81,7 +81,7 @@ class LoginPage extends StatelessWidget {
                   ModalRoute.withName('/Home'),
                 );
               },
-              style: TextButton.styleFrom(
+              style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
               ),
               child: Text('Login'),

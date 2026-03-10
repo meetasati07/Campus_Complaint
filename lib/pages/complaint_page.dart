@@ -78,9 +78,9 @@ class ComplaintPage extends StatelessWidget {
               ],
             ),
           ),
-          TextButton(
+          ElevatedButton(
             onPressed: () {},
-            style: TextButton.styleFrom(
+            style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
             ),
             child: Text('Raise \nComplaint', textAlign: TextAlign.center),
