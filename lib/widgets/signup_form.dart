@@ -10,6 +10,7 @@ class SignupForm extends StatefulWidget {
 
 class _SignupFormState extends State<SignupForm> {
   final _formKey = GlobalKey<FormState>();
+  bool isChecked = false;
 
   final TextStyle hintStyle = TextStyle(
     fontFamily: 'Poppins',
@@ -120,9 +121,23 @@ class _SignupFormState extends State<SignupForm> {
             },
           ),
           SizedBox(height: 10),
+          Row(
+            children: [
+              Checkbox(
+                value: isChecked,
+                onChanged: (bool? newValue) {
+                  setState(() {
+                    isChecked = newValue!;
+                  });
+                },
+              ),
+              Text('You hereby accept the Terms and Conditions.')
+            ],
+          ),
+          SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
+              if (_formKey.currentState!.validate() && isChecked) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Login Successful')),
                 );
