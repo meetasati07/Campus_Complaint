@@ -1,5 +1,6 @@
 import 'package:campus_complaint/constants/all_issues.dart';
 import 'package:campus_complaint/constants/my_issues.dart';
+import 'package:campus_complaint/pages/view_issues_page.dart';
 import 'package:campus_complaint/widgets/profile.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +18,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Hi, Meet'),
         centerTitle: false,
-        actions: [
-          Profile()
-        ],
+        actions: [Profile()],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -31,11 +30,19 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Latest Issues', style: textStyle),
-                Text(
-                  'View All >',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Theme.of(context).primaryColor,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ViewIssuesPage(issueType: 'latest_issues',)),
+                    );
+                  },
+                  child: Text(
+                    'View All >',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 ),
               ],
@@ -85,11 +92,19 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('My Issues', style: textStyle),
-                Text(
-                  'View All >',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Theme.of(context).primaryColor,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ViewIssuesPage(issueType: 'my_issues',)),
+                    );
+                  },
+                  child: Text(
+                    'View All >',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 ),
               ],
