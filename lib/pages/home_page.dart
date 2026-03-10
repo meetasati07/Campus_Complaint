@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            SelectableText(
                               '#Issue ${issue['issueNo']}',
                               style: TextStyle(fontSize: 14),
                             ),
@@ -121,7 +121,7 @@ class HomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            SelectableText(
                               '#Issue ${issue['issueNo']}',
                               style: TextStyle(fontSize: 14),
                             ),
