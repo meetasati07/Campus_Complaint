@@ -1,6 +1,5 @@
 import 'package:campus_complaint/constants/my_issues.dart';
-import 'package:campus_complaint/pages/landing_page.dart';
-import 'package:campus_complaint/widgets/popup_menu.dart';
+import 'package:campus_complaint/widgets/profile.dart';
 import 'package:flutter/material.dart';
 
 class TrackComplaintPage extends StatelessWidget {
@@ -12,38 +11,7 @@ class TrackComplaintPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Track Complaint'),
         actions: [
-          PopupMenu(
-            menuList: [
-              PopupMenuItem(
-                child: ListTile(
-                  leading: Icon(Icons.settings_rounded),
-                  title: Text('Settings'),
-                  onTap: () {},
-                ),
-              ),
-              PopupMenuItem(
-                child: ListTile(
-                  leading: Icon(Icons.logout_rounded),
-                  title: Text('Logout'),
-                  onTap: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(builder: (_) => LandingPage()),
-                      ModalRoute.withName('/Landing'),
-                    );
-                  },
-                ),
-              ),
-            ],
-            icon: ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(50),
-              child: Image(
-                image: AssetImage('assets/profile.jpg'),
-                height: 50,
-                width: 50,
-              ),
-            ),
-          ),
+          Profile()
         ],
       ),
       body: Padding(
