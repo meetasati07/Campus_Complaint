@@ -1,3 +1,5 @@
+import 'package:campus_complaint/pages/home_page.dart';
+import 'package:campus_complaint/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -72,7 +74,13 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (_) => HomePage()),
+                  ModalRoute.withName('/Home'),
+                );
+              },
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
               ),
@@ -88,9 +96,17 @@ class LoginPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextButton(onPressed: () {}, child: Text('Sign Up')),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (_) => SignupPage()),
+                    );
+                  },
+                  child: Text('Sign Up'),
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),
