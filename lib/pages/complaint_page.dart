@@ -87,22 +87,7 @@ class ComplaintPage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 36),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.report_problem_rounded, size: 36),
-            label: 'Complaint',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.track_changes_rounded, size: 36),
-            label: 'Track',
-          ),
-        ],
-      ),
+      
     );
   }
 }

@@ -1,5 +1,5 @@
-import 'package:campus_complaint/pages/home_page.dart';
 import 'package:campus_complaint/pages/login_page.dart';
+import 'package:campus_complaint/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
@@ -104,7 +104,7 @@ class SignupPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (_) => HomePage()),
+                  MaterialPageRoute(builder: (_) => BottomNavigation()),
                   ModalRoute.withName('/Home'),
                 );
               },
