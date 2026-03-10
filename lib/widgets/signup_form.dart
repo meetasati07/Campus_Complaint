@@ -131,7 +131,7 @@ class _SignupFormState extends State<SignupForm> {
                   });
                 },
               ),
-              Text('You hereby accept the Terms and Conditions.')
+              Text('You hereby accept the \nTerms and Conditions.')
             ],
           ),
           SizedBox(height: 10),

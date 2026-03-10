@@ -9,44 +9,48 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Login')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(100),
-              child: Image(
-                image: AssetImage('assets/profile.jpg'),
-                height: 200,
-                width: 200,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: LoginForm()
-            ),
-            Column(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
-                  'No Account?',
-                  style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                ClipRRect(
+                  borderRadius: BorderRadiusGeometry.circular(100),
+                  child: Image(
+                    image: AssetImage('assets/profile.jpg'),
+                    height: 200,
+                    width: 200,
                   ),
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (_) => SignupPage()),
-                    );
-                  },
-                  child: Text('Sign Up'),
+                SizedBox(height: 20),
+                LoginForm(),
+                SizedBox(height: 20),
+                Column(
+                  children: [
+                    Text(
+                      'No Account?',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (_) => SignupPage()),
+                        );
+                      },
+                      child: Text('Sign Up'),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

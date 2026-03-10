@@ -75,7 +75,13 @@ class _ComplaintFormState extends State<ComplaintForm> {
           ),
           SizedBox(height: 50),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Complaint Raised')),
+                );
+              }
+            },
             style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
             ),

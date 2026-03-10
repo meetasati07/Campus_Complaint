@@ -14,11 +14,17 @@ class ComplaintPage extends StatelessWidget {
           Profile()
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(padding: const EdgeInsets.all(24.0), child: ComplaintForm()),
-        ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(24.0),
+          margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ComplaintForm(),
+            ],
+          ),
+        ),
       ),
     );
   }
