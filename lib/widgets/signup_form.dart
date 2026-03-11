@@ -9,7 +9,7 @@ class SignupForm extends StatefulWidget {
 }
 
 class _SignupFormState extends State<SignupForm> {
-  final _formKey = GlobalKey<FormState>();
+  final _signupFormKey = GlobalKey<FormState>();
   bool isChecked = false;
 
   final TextStyle hintStyle = TextStyle(
@@ -30,7 +30,7 @@ class _SignupFormState extends State<SignupForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _formKey,
+      key: _signupFormKey,
       child: Column(
         children: [
           TextFormField(
@@ -142,7 +142,7 @@ class _SignupFormState extends State<SignupForm> {
           SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
-              if (_formKey.currentState!.validate() && isChecked) {
+              if (_signupFormKey.currentState!.validate() && isChecked) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Login Successful')),
                 );

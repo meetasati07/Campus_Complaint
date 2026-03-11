@@ -8,7 +8,7 @@ class ComplaintForm extends StatefulWidget {
 }
 
 class _ComplaintFormState extends State<ComplaintForm> {
-  final _formKey = GlobalKey<FormState>();
+  final _complaintFormKey = GlobalKey<FormState>();
 
   final TextStyle hintStyle = TextStyle(
     fontFamily: 'Poppins',
@@ -29,7 +29,7 @@ class _ComplaintFormState extends State<ComplaintForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _formKey,
+      key: _complaintFormKey,
       child: Column(
         children: [
           TextFormField(
@@ -76,10 +76,11 @@ class _ComplaintFormState extends State<ComplaintForm> {
           SizedBox(height: 50),
           ElevatedButton(
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
+              if (_complaintFormKey.currentState!.validate()) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Complaint Raised')),
                 );
+                _complaintFormKey.currentState!.reset();
               }
             },
             style: ElevatedButton.styleFrom(
